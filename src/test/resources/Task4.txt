@@ -1,0 +1,13 @@
+CSS-селектор:
+button[class="search3__button mini-suggest__button"]
+button[class*="search3__button"]
+[class*="mini-suggest__button"]
+[type="submit"]
+[tabindex="-1"]
+[aria-label="Найти"]
+
+xpath:
+//button[@type="submit"]
+//*[@type="submit"]
+//*[@tabindex="-1"]
+//*[@aria-label="Найти"]
