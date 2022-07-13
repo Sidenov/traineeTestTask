@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WithProblemsTests {
 
@@ -33,10 +32,17 @@ public class WithProblemsTests {
     public void stringsMustBeEquals() {
         String res = "a";
 
-        if (bd == "pui") {
+//        if (bd == "pui") {
+//            res = "asd";
+//        }
+
+//        if (bd.equals(new String("pui"))) {
+//            res = "asd";
+//        }
+
+        if (bd.equalsIgnoreCase(new String("Pui"))) {
             res = "asd";
         }
-
         assertEquals("asd", res);
 
     }
@@ -44,16 +50,17 @@ public class WithProblemsTests {
     @Test
     public void successfullyRemovingFirstElementFromList() {
 
-        List<String> sourceData = new ArrayList<>();
-        sourceData.add("1");
-        sourceData.add("viskas");
-        sourceData.add("chupocabra");
+//        List<String> sourceData = new ArrayList<>();
+//        sourceData.add("1");
+//        sourceData.add("viskas");
+//        sourceData.add("chupocabra");
+//
+//        sourceData.remove(0);
 
+        List<String> sourceData = new ArrayList<>(List.of("1", "viskas", "chupocabra"));
         sourceData.remove(0);
-
+        System.out.println(sourceData);
         assertFalse(sourceData.contains("1"));
-
     }
-
 
 }
